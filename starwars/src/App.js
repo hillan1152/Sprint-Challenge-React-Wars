@@ -1,5 +1,15 @@
 import React from 'react';
 import './App.css';
+import CharacterList from './components/CharacterList';
+import styled from "styled-components";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const AppDiv = styled.div`
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    margin-bottom: 10%;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -11,8 +21,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <AppDiv>
+        <h1 className="Header">React Wars</h1>
+        <CharacterList />
+      </AppDiv>
     </div>
+
   );
 }
 
