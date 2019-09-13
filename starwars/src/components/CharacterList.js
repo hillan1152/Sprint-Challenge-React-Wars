@@ -12,7 +12,7 @@ export default function CharacterList() {
         .then(response => {
             const people = response.data;
             console.log("All Characters", people);
-            setCharacters(characters);
+            setCharacters(people.results);
         })
         .catch(error =>{
             console.log("No Characters", error)
@@ -27,9 +27,10 @@ export default function CharacterList() {
                         <CharacterCard
                             key = {person.id}
                             name = {person.name}
+                            DOB = {person.birth_year}
                             height = {person.height}
                             mass = {person.mass}
-                            films = {person.films}
+                            
                         />
                     );
                 })
